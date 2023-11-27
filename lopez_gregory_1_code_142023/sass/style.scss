@@ -1,0 +1,207 @@
+$primary : #9356DC;
+$secondary : #FF79DA;
+$tertiary : #99E2D0;
+$background : #F3F3F3;
+$dark-green: #008766;
+$light-blue: #89C8FA;
+$dark-blue: #003A68;
+$dark-grey: #353535;
+
+/****** General ***********/
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/****** fonctionnement ***********/
+
+.fonctionnement-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+    margin-left: 1%;
+}
+
+.fonctionnement i {
+    font-size: 22px;
+    color: #7E7E7E;
+}
+
+.fonctionnement {
+    flex-direction: column;
+    margin-left: 5%;
+}
+
+.fonctionnement-button{
+    background-color: $background;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+    border-radius: 20px;
+    margin-bottom: 5%;
+    width: 95%;
+}
+
+.fonctionnement-step{
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-right: 100%;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    background-color: $primary;
+    color: white;
+}
+
+#fonctionnement-primary{
+    color: $primary;
+}
+
+/****** restaurants ***********/
+.restaurants {
+    background-color: $background;
+    padding: 0px 30px 20px 30px;
+    box-sizing: border-box;
+
+    .restaurants-cards {
+
+        .card img {
+            object-fit: cover;
+        }
+    
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            height: 251px;
+        }
+
+        .card{
+            display: flex;
+            flex-direction: column;
+            margin-top: 14px
+        }
+    
+        img{
+            width: 100%;
+            height: 75%;
+            border-radius: 20px 20px 0px 0px;
+        }
+    
+        .card-content {
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .card-title {
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .relative{
+            position: relative;
+        }
+        
+        .absolute{
+            position: absolute;
+        }
+        
+        .color-new{
+            background-color: $tertiary;
+            color: $dark-green;
+            padding: 5px;
+        }
+    
+        .card-icon {
+            margin: 20px 20px 0px 0px;
+        }
+    }
+}
+
+/****** Footer ***********/
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-grey;
+    padding-left: 5%;
+    justify-content: space-between;
+    padding-bottom: 2%;
+    color: white;
+    font-size: 16px;
+
+    h2 {
+        list-style-type: none;
+        line-height: 30px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    img {
+        -webkit-filter: invert(100%); /* Safari/Chrome */
+        filter: invert(100%);
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;        
+        }
+    }   
+
+    .footer-i {
+        font-size: 13px;
+        padding-top: 2%;
+        padding-right: 1%;     
+    }
+
+    .footer-i_plus{
+        @extend .footer-i;
+        padding-right: 2%;
+    }
+
+    li {
+        list-style-type: none;
+        line-height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

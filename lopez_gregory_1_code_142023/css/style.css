@@ -1,0 +1,163 @@
+/****** General ***********/
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/****** fonctionnement ***********/
+.fonctionnement-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50px;
+  margin-left: 1%;
+}
+
+.fonctionnement i {
+  font-size: 22px;
+  color: #7E7E7E;
+}
+
+.fonctionnement {
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.fonctionnement-button {
+  background-color: #F3F3F3;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+  margin-bottom: 5%;
+  width: 95%;
+}
+
+.fonctionnement-step {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-right: 100%;
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+  background-color: #9356DC;
+  color: white;
+}
+
+#fonctionnement-primary {
+  color: #9356DC;
+}
+
+/****** restaurants ***********/
+.restaurants {
+  background-color: #F3F3F3;
+  padding: 0px 30px 20px 30px;
+  box-sizing: border-box;
+}
+.restaurants .restaurants-cards .card img {
+  object-fit: cover;
+}
+.restaurants .restaurants-cards .card {
+  background-color: white;
+  border-radius: 20px;
+  height: 251px;
+}
+.restaurants .restaurants-cards .card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+.restaurants .restaurants-cards img {
+  width: 100%;
+  height: 75%;
+  border-radius: 20px 20px 0px 0px;
+}
+.restaurants .restaurants-cards .card-content {
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.restaurants .restaurants-cards .card-title {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.restaurants .restaurants-cards .relative {
+  position: relative;
+}
+.restaurants .restaurants-cards .absolute {
+  position: absolute;
+}
+.restaurants .restaurants-cards .color-new {
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 5px;
+}
+.restaurants .restaurants-cards .card-icon {
+  margin: 20px 20px 0px 0px;
+}
+
+/****** Footer ***********/
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding-left: 5%;
+  justify-content: space-between;
+  padding-bottom: 2%;
+  color: white;
+  font-size: 16px;
+}
+.footer-list h2 {
+  list-style-type: none;
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.footer-list img {
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+.footer-list ul {
+  margin: 0;
+  padding: 0;
+}
+.footer-list ul .flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.footer-list .footer-i, .footer-list .footer-i_plus {
+  font-size: 13px;
+  padding-top: 2%;
+  padding-right: 1%;
+}
+.footer-list .footer-i_plus {
+  padding-right: 2%;
+}
+.footer-list li {
+  list-style-type: none;
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
