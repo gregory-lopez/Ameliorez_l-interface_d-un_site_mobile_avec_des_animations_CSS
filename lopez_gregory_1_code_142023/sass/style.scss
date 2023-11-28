@@ -6,11 +6,27 @@ $dark-green: #008766;
 $light-blue: #89C8FA;
 $dark-blue: #003A68;
 $dark-grey: #353535;
-
 /****** General ***********/
-
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3 {
+    font-family: 'shriekhand';
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
 }
 
 a {
@@ -33,56 +49,121 @@ body {
     box-sizing: border-box;
 }
 
-/****** fonctionnement ***********/
+/****** Header ***********/
 
-.fonctionnement-button{
+.header-index {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    height: 50px;
-    margin-left: 1%;
+    flex-direction: column;
+
 }
 
-.fonctionnement i {
-    font-size: 22px;
-    color: #7E7E7E;
+.header-logo {
+    height: 63px;
 }
 
+.header-localisation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #EAEAEA;
+    width: 100%;
+
+    p {
+        margin: 5%;
+    }
+
+    i{
+        color: $dark-grey;
+        margin-right: 2%;
+    }
+}
+
+/****** Presentation ***********/
+.presentation {
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+
+    p {
+        color: $dark-grey;
+        font-size: 17px;
+        margin-bottom: 5%;
+    }
+
+    .btn {
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 25px;
+        width: 218px;
+        height: 50px;
+        background: linear-gradient(to top, $primary, $secondary);
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+
+        &:hover{
+            background: linear-gradient(to top, #a67bdb, #ffa5e5);
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+        }
+    }  
+}
+/****** Fonctionnement ***********/
 .fonctionnement {
     flex-direction: column;
     margin-left: 5%;
+
+    .fonctionnement-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50px;
+        background-color: $background;
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+        border-radius: 20px;
+        margin-left: 1%;
+        margin-bottom: 5%;
+        width: 95%;
+
+        i {
+            font-size: 22px;
+            color: #7E7E7E;
+        }
+
+        .fonctionnement-step{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin-right: 100%;
+            border-radius: 50px;
+            width: 25px;
+            height: 25px;
+            background-color: $primary;
+            color: white;
+        }
+
+        #fonctionnement-margin{
+            margin-left: 4%;
+        }
+
+        #fonctionnement-primary{
+            color: $primary;
+        }
+    }
 }
-
-.fonctionnement-button{
-    background-color: $background;
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
-    border-radius: 20px;
-    margin-bottom: 5%;
-    width: 95%;
-}
-
-.fonctionnement-step{
-
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    margin-right: 100%;
-    border-radius: 50px;
-    width: 25px;
-    height: 25px;
-    background-color: $primary;
-    color: white;
-}
-
-#fonctionnement-primary{
-    color: $primary;
-}
-
-/****** restaurants ***********/
+/****** Restaurants ***********/
 .restaurants {
     background-color: $background;
-    padding: 0px 30px 20px 30px;
+    padding: 5px 30px 20px 30px;
     box-sizing: border-box;
 
     .restaurants-cards {
@@ -90,64 +171,62 @@ body {
         .card img {
             object-fit: cover;
         }
-    
-        .card {
-            background-color: white;
-            border-radius: 20px;
-            height: 251px;
-        }
 
         .card{
             display: flex;
             flex-direction: column;
-            margin-top: 14px
+            margin-top: 14px;
+            background-color: white;
+            border-radius: 20px;
+            height: 251px;  
         }
-    
+
         img{
             width: 100%;
             height: 75%;
             border-radius: 20px 20px 0px 0px;
         }
-    
+
         .card-content {
             padding-left: 15px;
             display: flex;
             justify-content: space-between;
         }
-    
-        .card-title {
-            margin-top: 10px;
-            margin-bottom: 4px;
-            font-size: 14px;
-        }
 
         .relative{
             position: relative;
-        }
-        
+        } 
+
         .absolute{
             position: absolute;
         }
-        
+
+        h3 {
+            margin: 10px 0px 0px 0px;
+        }
+
         .color-new{
             background-color: $tertiary;
             color: $dark-green;
             padding: 5px;
         }
-    
+
         .card-icon {
-            margin: 20px 20px 0px 0px;
+            margin: 12px 20px 0px 0px;
         }
     }
 }
 
+.card-txt {
+    margin: 0;
+    padding: 0;
+}
 /****** Footer ***********/
-
 .footer-list {
     display: flex;
     flex-direction: column;
     background-color: $dark-grey;
-    padding-left: 5%;
+    padding-left: 10%;
     justify-content: space-between;
     padding-bottom: 2%;
     color: white;
@@ -163,17 +242,17 @@ body {
     img {
         -webkit-filter: invert(100%); /* Safari/Chrome */
         filter: invert(100%);
+        width: 137px;
     }
 
     ul {
         margin: 0;
         padding: 0;
-
         .flex-row {
             display: flex;
             flex-direction: row;        
         }
-    }   
+    }
 
     .footer-i {
         font-size: 13px;
@@ -193,15 +272,3 @@ body {
         font-size: 16px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

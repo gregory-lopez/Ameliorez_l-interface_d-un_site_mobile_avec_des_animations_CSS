@@ -17,32 +17,36 @@
 <body>
     <div class="main-container">
         <!-- Header -->
-        <header>
-            <h1><img src="" alt="">logo</h1>
+        <header class="header-index">
+            <div class="header-logo">
+                <h1><img src="/lopez_gregory_1_code_142023/images/logo/ohmyfood@2x.svg" alt="Ohmyfood"></h1>
+            </div>
+            <div class="header-localisation">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Paris, Belleville</p>
+            </div>
         </header>
         <main>
 
         <!-- Présentation -->
-        <section>
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Paris, Belleville</p>
-        </section>
 
-        <section>
-            <h2>Réservez le menu qui vous convient</h2>
-            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <button>Explorez nos restaurants</button>
+        <section class="presentation">
+
+                <h2>Réservez le menu qui vous convient</h2>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                <button class="btn">Explorez nos restaurants</button>
+
         </section>
 
         <!-- Fonctionnement -->
 
-        <section class="fonctionnement-section">
+        <section>
             <div class="fonctionnement">
                 <h2>Fonctionnement</h2>
                 <div class="fonctionnement-container relative">
                     <div class="fonctionnement-button">
                         <p class="absolute fonctionnement-step">1</p>
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <i id="fonctionnement-margin" class="fa-solid fa-mobile-screen-button"></i>
                         <p>Choississez un restaurant</p>
                     </div>
                     <div class="fonctionnement-button">
@@ -80,7 +84,48 @@
                             </div>
                         </article>
                     </a>
-                   
+                    <a href="#">
+                        <article class="card">
+                            <img class="relative" src="/lopez_gregory_1_code_142023/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
+                            <p class="absolute color-new">Nouveau</p>
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">La note enchantée</h3>
+                                    <p class="card-subtitle">Charonne</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="card">
+                            <img src="/lopez_gregory_1_code_142023/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">À la française</h3>
+                                    <p class="card-subtitle">Cité Rouge</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#">
+                        <article class="card">
+                            <img class="relative" src="/lopez_gregory_1_code_142023/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">Le délice des sens</h3>
+                                    <p class="card-subtitle">Folie-Méricourt</p>
+                                </div>
+                                <div class="card-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                        </article>
                     </a>
                 </div>
             </section>
