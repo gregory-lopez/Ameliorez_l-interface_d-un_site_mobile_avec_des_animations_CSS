@@ -1,10 +1,59 @@
+.btn {
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+}
+.btn:hover {
+  background: linear-gradient(to top, #a67bdb, #ffa5e5);
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+}
+
+.card, .menu .menu-card, .restaurants .restaurants-cards .restaurant-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  background-color: white;
+  border-radius: 20px;
+  height: 251px;
+}
+
+.card_content, .menu .menu-card .menu-card_content, .restaurants .restaurants-cards .restaurant-card_content {
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_txt, .menu .menu-card .menu-card_txt, .restaurants .restaurants-cards .restaurant-card_txt {
+  margin: 0;
+  padding: 0;
+}
+
+.card_title, .menu .menu-card .menu-card_title, .restaurants .restaurants-cards .restaurant-card_title {
+  margin: 10px 0px 0px 0px;
+}
+
+.card_icon, .restaurants .restaurants-cards .restaurant-card_icon {
+  margin: 12px 20px 0px 0px;
+}
+
 /****** General ***********/
 * {
   font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: "shriekhand";
+.flexcenter, .btn-menu_container, .menu .menu-card .menu-card_icon, .menu .menu-card .menu-card_check, .header-menu .header-menu_logo, .header-menu .header-menu_icon, .header-menu, .footer-list .footer-i, .footer-list .footer-i_plus, .fonctionnement .fonctionnement-button .fonctionnement-step, .fonctionnement .fonctionnement-button, .presentation, .header-index .header-localisation, .header-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "shrikhand";
 }
 
 h2 {
@@ -42,82 +91,51 @@ body {
   box-sizing: border-box;
 }
 
+/****** INDEX ***********/
 /****** Header ***********/
 .header-index {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
-
-.header-logo {
+.header-index .header-logo {
   height: 63px;
 }
-
-.header-localisation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header-index .header-localisation {
   flex-direction: row;
   background-color: #EAEAEA;
   width: 100%;
 }
-.header-localisation p {
+.header-index .header-localisation p {
   margin: 5%;
 }
-.header-localisation i {
+.header-index .header-localisation i {
   color: #353535;
   margin-right: 2%;
 }
 
 /****** Presentation ***********/
 .presentation {
-  background-color: #F3F3F3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   align-content: center;
   flex-direction: column;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10%;
+  background-color: #F3F3F3;
+  padding: 0% 10% 10% 10%;
 }
 .presentation p {
   color: #353535;
   font-size: 17px;
   margin-bottom: 5%;
 }
-.presentation .btn {
-  color: white;
-  border: none;
-  font-size: 16px;
-  border-radius: 25px;
-  width: 218px;
-  height: 50px;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
-}
-.presentation .btn:hover {
-  background: linear-gradient(to top, #a67bdb, #ffa5e5);
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
-}
 
 /****** Fonctionnement ***********/
 .fonctionnement {
-  flex-direction: column;
   margin-left: 5%;
 }
 .fonctionnement .fonctionnement-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-evenly;
   height: 50px;
   background-color: #F3F3F3;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
   border-radius: 20px;
-  margin-left: 1%;
-  margin-bottom: 5%;
+  margin: 0% 1% 5% 1%;
   width: 95%;
 }
 .fonctionnement .fonctionnement-button i {
@@ -125,9 +143,6 @@ body {
   color: #7E7E7E;
 }
 .fonctionnement .fonctionnement-button .fonctionnement-step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   margin-right: 100%;
   border-radius: 50px;
@@ -149,60 +164,34 @@ body {
   padding: 5px 30px 20px 30px;
   box-sizing: border-box;
 }
-.restaurants .restaurants-cards .card img {
+.restaurants .restaurants-cards .restaurant-card img {
   object-fit: cover;
-}
-.restaurants .restaurants-cards .card {
-  display: flex;
-  flex-direction: column;
-  margin-top: 14px;
-  background-color: white;
-  border-radius: 20px;
-  height: 251px;
-}
-.restaurants .restaurants-cards img {
   width: 100%;
   height: 75%;
   border-radius: 20px 20px 0px 0px;
-}
-.restaurants .restaurants-cards .card-content {
-  padding-left: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-.restaurants .restaurants-cards .relative {
-  position: relative;
-}
-.restaurants .restaurants-cards .absolute {
-  position: absolute;
-}
-.restaurants .restaurants-cards h3 {
-  margin: 10px 0px 0px 0px;
 }
 .restaurants .restaurants-cards .color-new {
   background-color: #99E2D0;
   color: #008766;
   padding: 5px;
+  margin: 5% 0% 0% 58%;
 }
-.restaurants .restaurants-cards .card-icon {
-  margin: 12px 20px 0px 0px;
+.restaurants .relative {
+  position: relative;
 }
-
-.card-txt {
-  margin: 0;
-  padding: 0;
+.restaurants .absolute {
+  position: absolute;
 }
 
 /****** Footer ***********/
 .footer-list {
   display: flex;
   flex-direction: column;
-  background-color: #353535;
-  padding-left: 10%;
   justify-content: space-between;
-  padding-bottom: 2%;
+  background-color: #353535;
   color: white;
   font-size: 16px;
+  padding: 0% 0% 2% 10%;
 }
 .footer-list h2 {
   list-style-type: none;
@@ -224,18 +213,130 @@ body {
   flex-direction: row;
 }
 .footer-list .footer-i, .footer-list .footer-i_plus {
-  font-size: 13px;
-  padding-top: 2%;
-  padding-right: 1%;
+  width: 30px;
 }
 .footer-list .footer-i_plus {
-  padding-right: 2%;
+  width: 30px;
 }
 .footer-list li {
   list-style-type: none;
   line-height: 30px;
   font-weight: 400;
   font-size: 16px;
+}
+
+/****** PAGE RESTAURANT ***********/
+/****** Header RESTAURANT ***********/
+.header-menu {
+  flex-direction: row;
+}
+.header-menu .header-menu_icon {
+  width: 13%;
+  font-size: 19px;
+  color: #353535;
+}
+.header-menu .header-menu_logo {
+  width: 100%;
+}
+.header-menu .header-menu_logo img {
+  width: 80%;
+}
+
+/****** Presentation RESTAURANT***********/
+.presentation-menu_image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: -1;
+}
+
+.presentation-menu {
+  background-color: #F3F3F3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  margin-top: -65px;
+  border-radius: 20px 20px 0px 0px;
+}
+.presentation-menu h2 {
+  font-size: 28px;
+  font-style: italic;
+  font-family: "shrikhand";
+  font-weight: 400;
+}
+.presentation-menu i {
+  font-size: 22px;
+}
+
+/****** Menu RESTAURANT***********/
+.menu {
+  background-color: #F3F3F3;
+  padding: 5px 15px 20px 15px;
+  box-sizing: border-box;
+}
+.menu .menu-cards .menu-title {
+  width: 40px;
+  height: 20px;
+  border-bottom: 3px #99E2D0 solid;
+}
+.menu .menu-cards .menu-title h2 {
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.menu .menu-card {
+  height: 68px;
+  overflow: hidden;
+}
+.menu .menu-card:hover .menu-card_check {
+  margin-right: 0;
+  transition: 0.3s;
+}
+.menu .menu-card .menu-card_txt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .menu-card .menu-card_txt p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  font-weight: 300;
+}
+.menu .menu-card .menu-card_title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+.menu .menu-card .menu-card_price {
+  color: #353535;
+  margin: 38px 0px 0px auto;
+  width: 38px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.menu .menu-card .menu-card_check {
+  background-color: #99E2D0;
+  border-radius: 0px 20px 20px 0px;
+  margin-right: -59px;
+  width: 59px;
+  height: 68px;
+}
+.menu .menu-card .menu-card_icon {
+  background-color: white;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+  color: #99E2D0;
+}
+
+.btn-menu_container {
+  padding-top: 10%;
 }
 
 /*# sourceMappingURL=style.css.map */
