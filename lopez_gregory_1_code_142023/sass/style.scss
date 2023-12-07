@@ -101,7 +101,6 @@ body {
 
 .main-container {
     width: 100%;
-    max-width: 1440px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -109,7 +108,6 @@ body {
 
 /****** INDEX ***********/
 /****** Header ***********/
-
 .header-index {
     @extend .flexcenter;
     flex-direction: column;
@@ -123,6 +121,7 @@ body {
         flex-direction: row;
         background-color: #EAEAEA;
         width: 100%;
+        height: 50px;
     
         p {
             margin: 5%;
@@ -188,7 +187,7 @@ body {
         }
     }
 }
-/****** Restaurants ***********/
+/****** Restaurants cartes ***********/
 .restaurants {
     background-color: $background;
     padding: 5px 30px 20px 30px;
@@ -223,11 +222,12 @@ body {
             @extend .card_icon;
         }
 
-        .color-new{
+        .color-new {
             background-color: $tertiary;
             color: $dark-green;
             padding: 5px;
-            margin: 5% 0% 0% 58%;
+            top: 20px;
+            right: 15px;
         }
     }
 
@@ -374,7 +374,6 @@ body {
 
             &:hover .menu-card_check{
                 margin-right: 0;
-                transition: .3s;
             }
 
             .menu-card_content {
@@ -415,6 +414,7 @@ body {
                 margin-right: -59px;
                 width: 59px;
                 height: 68px;
+                transition: .3s;
             }
     
             .menu-card_icon {
@@ -427,10 +427,78 @@ body {
             }
         }
 
+        .btn-menu_container {
+            padding-top: 10%;
+            @extend .flexcenter;
+        }
+
     
 }
 
-.btn-menu_container {
-    padding-top: 10%;
-    @extend .flexcenter;
+
+@media (min-width: 1024px) {
+/****** Header Mediaquery***********/
+.header-index {
+
+    .header-logo {
+        height: 96px;
+    }
+}
+
+/****** Fonctionnement Mediaquery***********/
+    .fonctionnement {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 65px;
+
+        .fonctionnement-container {
+        display: flex;
+        flex-direction: row;
+
+            .fonctionnement-button {
+            height: 72px;
+            width: 33%;
+            }
+        }
+    }
+
+/****** Restaurants cartes Mediaquery ***********/
+    .restaurants {
+    flex-direction: column;
+
+    .restaurants-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+            .restaurant-card {
+            width: 90%;
+            }
+    
+    
+            a {
+            margin-left: 1%;
+            margin-top: 2.5%;
+            width: 40%;
+    
+            }
+        }
+    }
+/****** Fonctionnement Mediaquery ***********/
+    .fonctionnement{
+        width: 100%;
+        padding: 0;
+        margin-left: 2%;
+        .fonctionnement-container{
+            justify-content: center;
+
+            .fonctionnement-button {
+                width: 24%;
+            }
+        } 
+    }
+
+
 }
