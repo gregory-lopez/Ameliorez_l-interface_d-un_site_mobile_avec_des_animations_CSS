@@ -106,7 +106,7 @@ body {
     box-sizing: border-box;
 }
 
-/****** INDEX ***********/
+/******************** PAGE INDEX *********************/
 /****** Header ***********/
 .header-index {
     @extend .flexcenter;
@@ -148,6 +148,7 @@ body {
         margin-bottom: 5%;
     }
 }
+
 /****** Fonctionnement ***********/
 .fonctionnement {
     margin-left: 5%;
@@ -187,6 +188,7 @@ body {
         }
     }
 }
+
 /****** Restaurants cartes ***********/
 .restaurants {
     background-color: $background;
@@ -291,7 +293,7 @@ body {
     }
 }
 
-/****** PAGE RESTAURANT ***********/
+/******************** PAGE RESTAURANT *********************/
 /****** Header RESTAURANT ***********/
 .header-menu {
     @extend .flexcenter;
@@ -313,44 +315,49 @@ body {
         }
     }
 }
+
 /****** Presentation RESTAURANT***********/
-.presentation-menu_image {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    z-index: -1;
-
-}
-
 .presentation-menu {
-    background-color: $background;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
-    margin-top: -65px;
-    border-radius: 20px 20px 0px 0px;
 
-        h2 {
-            font-size: 28px;
-            font-style: italic;
-            font-family: 'shrikhand';
-            font-weight: 400;
-        }
-    
-        i {
-            font-size: 22px;
-        }
+    .presentation-menu_image {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        z-index: -1;
+
+    }
+
+    .presentation-menu-title {
+        background-color: $background;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1;
+        bottom: 50px;
+        border-radius: 20px 20px 0px 0px;
+        
+            h2 {
+                font-size: 28px;
+                font-style: italic;
+                font-family: 'shrikhand';
+                font-weight: 400;
+            }
+        
+            i {
+                font-size: 22px;
+            }
+    }
 }
 
 /****** Menu RESTAURANT***********/
 .menu {
     background-color: $background;
+    margin-top: -65px;
     padding: 5px 15px 20px 15px;
+    position: relative;
     box-sizing: border-box;
-    
 
     .menu-cards {
 
@@ -435,7 +442,6 @@ body {
     
 }
 
-
 @media (min-width: 1024px) {
 /****** Header Mediaquery***********/
 .header-index {
@@ -444,22 +450,32 @@ body {
         height: 96px;
     }
 }
-
+/****** Presentation Mediaquery***********/
+.presentation {
+    padding: 0% 10% 2% 10%;
+}
 /****** Fonctionnement Mediaquery***********/
     .fonctionnement {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 80%;
-    padding-left: 65px;
+    width: 100%;
+        padding: 0;
+        margin-left: 0%;
+
+        .fonctionnement-title {
+            display: flex;
+            margin-left: 2%;
+        }
 
         .fonctionnement-container {
         display: flex;
         flex-direction: row;
+        justify-content: center;
 
             .fonctionnement-button {
             height: 72px;
-            width: 33%;
+            width: 24%;
             }
         }
     }
@@ -479,26 +495,66 @@ body {
     
     
             a {
-            margin-left: 1%;
+            margin-left: 3%;
             margin-top: 2.5%;
-            width: 40%;
+            width: 33%;
     
             }
         }
     }
-/****** Fonctionnement Mediaquery ***********/
-    .fonctionnement{
-        width: 100%;
-        padding: 0;
-        margin-left: 2%;
-        .fonctionnement-container{
-            justify-content: center;
 
-            .fonctionnement-button {
-                width: 24%;
-            }
-        } 
+/****** Footer Mediaquery ***********/
+    .footer-list {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    
+        h2 {
+            padding-top: 49px;
+            margin-bottom: 6px;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+    
+        ul {
+            display: flex;
+            padding-top: 61px;
+            margin-bottom: 11px;
+
+            li{ 
+                margin-right: 20px
+            };
+        }
     }
 
+/****** Presentation RESTAURANT Mediaquery ***********/
+    .presentation-menu {
 
+        .presentation-menu_image {
+
+            img {
+                height: 900px;
+            }
+        }
+
+        .presentation-menu-title {
+            width: 80%;
+            margin-left: 10%;
+            bottom: 240px;
+        }
+    }       
+/****** Menu RESTAURANT Mediaquery ***********/
+    .menu {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: -245px;
+    
+        .menu-cards {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
 }
+
+
+
