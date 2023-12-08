@@ -1,51 +1,4 @@
-.btn {
-  color: white;
-  border: none;
-  font-size: 16px;
-  border-radius: 25px;
-  width: 218px;
-  height: 50px;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
-}
-.btn:hover {
-  background: linear-gradient(to top, #a67bdb, #ffa5e5);
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
-}
-
-.card, .menu .menu-card, .restaurants .restaurants-cards .restaurant-card {
-  display: flex;
-  flex-direction: column;
-  margin-top: 14px;
-  background-color: white;
-  border-radius: 20px;
-  height: 251px;
-}
-
-.card_content, .menu .menu-card .menu-card_content, .restaurants .restaurants-cards .restaurant-card_content {
-  padding-left: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.card_txt, .menu .menu-card .menu-card_txt, .restaurants .restaurants-cards .restaurant-card_txt {
-  margin: 0;
-  padding: 0;
-}
-
-.card_title, .menu .menu-card .menu-card_title, .restaurants .restaurants-cards .restaurant-card_title {
-  margin: 10px 0px 0px 0px;
-}
-
-.card_icon, .restaurants .restaurants-cards .restaurant-card_icon {
-  margin: 12px 20px 0px 0px;
-}
-
 /****** General ***********/
-* {
-  font-family: "Roboto", sans-serif;
-}
-
 .flexcenter, .menu .btn-menu_container, .menu .menu-card .menu-card_icon, .menu .menu-card .menu-card_check, .header-menu .header-menu_logo, .header-menu .header-menu_icon, .header-menu, .footer-list .footer-i, .footer-list .footer-i_plus, .fonctionnement .fonctionnement-button .fonctionnement-step, .fonctionnement .fonctionnement-button, .presentation, .header-index .header-localisation, .header-index {
   display: flex;
   justify-content: center;
@@ -88,6 +41,106 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+/****** COLOR ***********/
+/****** BTN ***********/
+.btn {
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+}
+.btn:hover {
+  background: linear-gradient(to top, #a67bdb, #ffa5e5);
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+}
+
+/****** CARD ***********/
+.card, .menu .menu-card, .restaurants .restaurants-cards .restaurant-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  background-color: white;
+  border-radius: 20px;
+  height: 251px;
+}
+
+.card_content, .menu .menu-card .menu-card_content, .restaurants .restaurants-cards .restaurant-card_content {
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_txt, .menu .menu-card .menu-card_txt, .restaurants .restaurants-cards .restaurant-card_txt {
+  margin: 0;
+  padding: 0;
+}
+
+.card_title, .menu .menu-card .menu-card_title, .restaurants .restaurants-cards .restaurant-card_title {
+  margin: 10px 0px 0px 0px;
+}
+
+.card_icon, .restaurants .restaurants-cards .restaurant-card_icon {
+  margin: 12px 20px 0px 0px;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+/****** HEART ANIMATION ***********/
+.animation-card_icon, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon, .restaurants .restaurants-cards .restaurant-card_icon {
+  overflow: hidden;
+}
+.animation-card_icon:hover .fa-solid, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon:hover .fa-solid, .restaurants .restaurants-cards .restaurant-card_icon:hover .fa-solid {
+  bottom: 0px;
+  visibility: visible;
+}
+.animation-card_icon:hover .fa-regular, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon:hover .fa-regular, .restaurants .restaurants-cards .restaurant-card_icon:hover .fa-regular {
+  color: transparent;
+}
+.animation-card_icon .fa-regular, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon .fa-regular, .restaurants .restaurants-cards .restaurant-card_icon .fa-regular {
+  transition: 1s;
+  position: absolute;
+}
+.animation-card_icon .fa-solid, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon .fa-solid, .restaurants .restaurants-cards .restaurant-card_icon .fa-solid {
+  font-size: 17px;
+  color: transparent;
+  background-image: linear-gradient(to top, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  bottom: 17px;
+  transition: 0.3s;
+  position: relative;
+  visibility: hidden;
+}
+
+/****** Appear ANIMATION  ***********/
+.appear, .menu .menu-cards {
+  animation: appearFromTop 1s;
+  animation-fill-mode: both;
+}
+@keyframes appearFromTop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.appear:nth-child(1), .menu .menu-cards:nth-child(1) {
+  animation-delay: 1s;
+}
+.appear:nth-child(2), .menu .menu-cards:nth-child(2) {
+  animation-delay: 2s;
+}
+.appear:nth-child(3), .menu .menu-cards:nth-child(3) {
+  animation-delay: 3s;
 }
 
 /******************** PAGE INDEX *********************/
@@ -267,7 +320,10 @@ body {
   font-family: "shrikhand";
   font-weight: 400;
 }
-.presentation-menu .presentation-menu-title i {
+.presentation-menu .presentation-menu-title .restaurant-menu-card_icon {
+  font-size: 22px;
+}
+.presentation-menu .presentation-menu-title .restaurant-menu-card_icon .fa-solid {
   font-size: 22px;
 }
 
@@ -278,6 +334,9 @@ body {
   padding: 5px 15px 20px 15px;
   position: relative;
   box-sizing: border-box;
+}
+.menu .menu-cards {
+  margin-top: 5%;
 }
 .menu .menu-cards .menu-title {
   width: 40px;

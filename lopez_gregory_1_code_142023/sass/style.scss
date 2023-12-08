@@ -1,67 +1,4 @@
-$primary : #9356DC;
-$secondary : #FF79DA;
-$tertiary : #99E2D0;
-$background : #F3F3F3;
-$dark-green: #008766;
-$light-blue: #89C8FA;
-$dark-blue: #003A68;
-$dark-grey: #353535;
-
-@mixin overflow {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.btn {
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 25px;
-    width: 218px;
-    height: 50px;
-    background: linear-gradient(to top, $primary, $secondary);
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
-
-    &:hover{
-        background: linear-gradient(to top, #a67bdb, #ffa5e5);
-        filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
-    }
-}  
-
-.card{
-    display: flex;
-    flex-direction: column;
-    margin-top: 14px;
-    background-color: white;
-    border-radius: 20px;
-    height: 251px;  
-}
-
-.card_content {
-    padding-left: 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.card_txt {
-    margin: 0;
-    padding: 0;
-}
-
-.card_title {
-    margin: 10px 0px 0px 0px;
-}
-
-.card_icon {
-    margin: 12px 20px 0px 0px;
-}
-
 /****** General ***********/
-* {
-    font-family: 'Roboto', sans-serif;
-}
-
 .flexcenter {
     display: flex;
     justify-content: center;
@@ -105,6 +42,122 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+/****** COLOR ***********/
+$primary : #9356DC;
+$secondary : #FF79DA;
+$tertiary : #99E2D0;
+$background : #F3F3F3;
+$dark-green: #008766;
+$light-blue: #89C8FA;
+$dark-blue: #003A68;
+$dark-grey: #353535;
+$gradient: linear-gradient(to top, $primary, $secondary);
+
+@mixin overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/****** BTN ***********/
+.btn {
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 218px;
+    height: 50px;
+    background: linear-gradient(to top, $primary, $secondary);
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+
+    &:hover{
+        background: linear-gradient(to top, #a67bdb, #ffa5e5);
+        filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+    }
+}  
+
+/****** CARD ***********/
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    background-color: white;
+    border-radius: 20px;
+    height: 251px;  
+}
+
+.card_content {
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_txt {
+    margin: 0;
+    padding: 0;
+}
+
+.card_title {
+    margin: 10px 0px 0px 0px;
+}
+
+.card_icon {
+    margin: 12px 20px 0px 0px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/****** HEART ANIMATION ***********/
+.animation-card_icon {
+    overflow: hidden;
+    &:hover .fa-solid{
+        bottom: 0px;
+        visibility: visible;
+
+    }
+    &:hover  .fa-regular{
+        color: transparent;
+    }
+
+    .fa-regular {
+        transition: 1s;
+        position: absolute;
+    }
+
+    .fa-solid {
+        font-size: 17px;
+        color: transparent;
+        background-image: linear-gradient(to top, $secondary, $primary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        bottom: 17px;
+        transition: .3s;
+        position: relative;
+        visibility: hidden;
+    }
+}
+
+/****** Appear ANIMATION  ***********/
+  .appear {
+    @keyframes appearFromTop {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    @for $i from 1 to 4 {
+        &:nth-child(#{$i}) {
+            animation-delay: 1s * $i;
+        }
+    }
+    animation: appearFromTop 1s;
+    animation-fill-mode: both;
+  }
 
 /******************** PAGE INDEX *********************/
 /****** Header ***********/
@@ -222,6 +275,7 @@ body {
 
         .restaurant-card_icon {
             @extend .card_icon;
+            @extend .animation-card_icon;
         }
 
         .color-new {
@@ -338,29 +392,36 @@ body {
         bottom: 50px;
         border-radius: 20px 20px 0px 0px;
         
-            h2 {
-                font-size: 28px;
-                font-style: italic;
-                font-family: 'shrikhand';
-                font-weight: 400;
-            }
-        
-            i {
+        h2 {
+            font-size: 28px;
+            font-style: italic;
+            font-family: 'shrikhand';
+            font-weight: 400;
+        }
+    
+        .restaurant-menu-card_icon {
+            font-size: 22px;
+            @extend .animation-card_icon;
+
+            .fa-solid {
                 font-size: 22px;
             }
+        }
     }
 }
 
 /****** Menu RESTAURANT***********/
 .menu {
+
     background-color: $background;
     margin-top: -65px;
     padding: 5px 15px 20px 15px;
     position: relative;
     box-sizing: border-box;
-
+    
     .menu-cards {
-
+        @extend .appear;
+        margin-top: 5%;
         .menu-title {
             width: 40px;
             height: 20px;
@@ -374,65 +435,66 @@ body {
         }
     }
     
-        .menu-card{
-            @extend .card; 
-            height: 68px;
-            overflow: hidden;
+    .menu-card{
+        @extend .card; 
+        height: 68px;
+        overflow: hidden;
 
-            &:hover .menu-card_check{
-                margin-right: 0;
-            }
-
-            .menu-card_content {
-                @extend .card_content;
-            }
     
-            .menu-card_txt {
-                @extend .card_txt;
-                @include overflow;
-               
-               p {
-                 @include overflow;
-                font-size: 15px;
-                font-weight: 300;
-               
-            }
-            }
-    
-            .menu-card_title {
-                @extend .card_title;
-                @include overflow;
-                margin-bottom: 8px;
-                
-            }
-    
-            .menu-card_price {
-                color: $dark-grey;
-                margin: 38px 0px 0px auto;
-                width: 38px;
-                font-size: 15px;
-                font-weight: 700;
-            }
-    
-            .menu-card_check {
-                @extend .flexcenter;
-                background-color: $tertiary;
-                border-radius: 0px 20px 20px 0px;
-                margin-right: -59px;
-                width: 59px;
-                height: 68px;
-                transition: .3s;
-            }
-    
-            .menu-card_icon {
-                @extend .flexcenter;
-                background-color: white;
-                border-radius: 50px;
-                height: 25px;
-                width: 25px;
-                color: $tertiary;
-            }
+        &:hover .menu-card_check{
+            margin-right: 0;
         }
+
+        .menu-card_content {
+            @extend .card_content;
+        }
+
+        .menu-card_txt {
+            @extend .card_txt;
+            @include overflow;
+            
+            p {
+                @include overflow;
+            font-size: 15px;
+            font-weight: 300;
+            
+        }
+        }
+
+        .menu-card_title {
+            @extend .card_title;
+            @include overflow;
+            margin-bottom: 8px;
+            
+        }
+
+        .menu-card_price {
+            color: $dark-grey;
+            margin: 38px 0px 0px auto;
+            width: 38px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .menu-card_check {
+            @extend .flexcenter;
+            background-color: $tertiary;
+            border-radius: 0px 20px 20px 0px;
+            margin-right: -59px;
+            width: 59px;
+            height: 68px;
+            transition: .3s;
+        }
+
+        .menu-card_icon {
+            @extend .flexcenter;
+            background-color: white;
+            border-radius: 50px;
+            height: 25px;
+            width: 25px;
+            color: $tertiary;
+        }
+    }
 
         .btn-menu_container {
             padding-top: 10%;
@@ -444,16 +506,16 @@ body {
 
 @media (min-width: 1024px) {
 /****** Header Mediaquery***********/
-.header-index {
+    .header-index {
 
-    .header-logo {
-        height: 96px;
+        .header-logo {
+            height: 96px;
+        }
     }
-}
 /****** Presentation Mediaquery***********/
-.presentation {
-    padding: 0% 10% 2% 10%;
-}
+    .presentation {
+        padding: 0% 10% 2% 10%;
+    }
 /****** Fonctionnement Mediaquery***********/
     .fonctionnement {
     display: flex;
@@ -543,6 +605,7 @@ body {
             bottom: 240px;
         }
     }       
+
 /****** Menu RESTAURANT Mediaquery ***********/
     .menu {
         width: 80%;
