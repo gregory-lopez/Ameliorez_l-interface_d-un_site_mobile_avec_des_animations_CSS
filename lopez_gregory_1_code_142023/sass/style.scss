@@ -1,4 +1,8 @@
 /****** General ***********/
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 .flexcenter {
     display: flex;
     justify-content: center;
@@ -69,11 +73,11 @@ $gradient: linear-gradient(to top, $primary, $secondary);
     width: 218px;
     height: 50px;
     background: linear-gradient(to top, $primary, $secondary);
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+    transition: opacity 1s, filter 1s;
 
     &:hover{
-        background: linear-gradient(to top, #a67bdb, #ffa5e5);
-        filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+        opacity: 0.8;
+        filter: drop-shadow(7px 7px 5px black)
     }
 }  
 
@@ -104,10 +108,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
 .card_icon {
     margin: 12px 20px 0px 0px;
-}
-
-* {
-    font-family: 'Roboto', sans-serif;
 }
 
 /****** HEART ANIMATION ***********/
@@ -141,24 +141,65 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 }
 
 /****** Appear ANIMATION  ***********/
-  .appear {
+.appear {
     @keyframes appearFromTop {
         from {
-          opacity: 0;
+            opacity: 0;
         }
         to {
-          opacity: 1;
+            opacity: 1;
         }
-      }
+        }
+
     @for $i from 1 to 4 {
         &:nth-child(#{$i}) {
-            animation-delay: 1s * $i;
+            animation-delay: 2s + $i;
         }
     }
-    animation: appearFromTop 1s;
+    animation: appearFromTop 2s;
     animation-fill-mode: both;
-  }
+}
 
+/****** Loader ANIMATION  ***********/
+ .loader {
+ position: fixed;
+ background: $primary;
+ width: 100vw;
+ height: 100vh;
+ inset: 0;
+ @extend .flexcenter;
+ z-index: 2;
+ animation: disappear 200ms 3s linear;
+ animation-fill-mode: forwards;
+ transform-origin: bottom;
+
+ .dot {
+     @for $i from 1 to 4 {
+         &:nth-child(#{$i}) {
+             animation-delay: 0.2s * $i + 0.3s;
+         }
+     }
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     background-color: $secondary;
+     margin: 0 15px;
+     animation: loader infinite 0.5s alternate;
+ }
+    
+ @keyframes disappear {
+     0% { opacity: 1; }
+     100% {  opacity: 0;
+             visibility: hidden; 
+          }
+ }
+    
+ @keyframes loader {
+     100% {
+         transform: translateY(-30px)
+     }
+ }   
+ }
 /******************** PAGE INDEX *********************/
 /****** Header ***********/
 .header-index {
@@ -205,6 +246,8 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 /****** Fonctionnement ***********/
 .fonctionnement {
     margin-left: 5%;
+    padding: 5% 0 5% 0;
+
 
     .fonctionnement-button {
         @extend .flexcenter;
@@ -245,7 +288,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 /****** Restaurants cartes ***********/
 .restaurants {
     background-color: $background;
-    padding: 5px 30px 20px 30px;
+    padding: 10% 5% 20% 5%;
     box-sizing: border-box;
 
     .restaurants-cards {
@@ -355,7 +398,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
     .header-menu_icon {
         @extend .flexcenter;
-        width: 13%;
+        width: 5%;
         font-size: 19px;
         color: $dark-grey;
     }
@@ -505,13 +548,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 }
 
 @media (min-width: 1024px) {
-/****** Header Mediaquery***********/
-    .header-index {
-
-        .header-logo {
-            height: 96px;
-        }
-    }
 /****** Presentation Mediaquery***********/
     .presentation {
         padding: 0% 10% 2% 10%;
@@ -527,7 +563,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
         .fonctionnement-title {
             display: flex;
-            margin-left: 2%;
+            margin-left: 17%;
         }
 
         .fonctionnement-container {
@@ -537,7 +573,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
             .fonctionnement-button {
             height: 72px;
-            width: 24%;
+            width: 20%;
             }
         }
     }
@@ -545,6 +581,12 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 /****** Restaurants cartes Mediaquery ***********/
     .restaurants {
     flex-direction: column;
+    padding: 1% 0 2% 0;
+
+    .restaurants-title {
+        padding-left: 17%;
+        height: 0px;
+    }
 
     .restaurants-cards {
         display: flex;
@@ -589,6 +631,8 @@ $gradient: linear-gradient(to top, $primary, $secondary);
         }
     }
 
+/****** Header RESTAURANT Mediaquery***********/
+
 /****** Presentation RESTAURANT Mediaquery ***********/
     .presentation-menu {
 
@@ -615,6 +659,10 @@ $gradient: linear-gradient(to top, $primary, $secondary);
         .menu-cards {
             width: 70%;
             margin-left: 15%;
+        }
+
+        .btn-menu_container {
+            padding-top: 3%;
         }
     }
 }

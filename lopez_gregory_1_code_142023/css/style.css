@@ -1,5 +1,9 @@
 /****** General ***********/
-.flexcenter, .menu .btn-menu_container, .menu .menu-card .menu-card_icon, .menu .menu-card .menu-card_check, .header-menu .header-menu_logo, .header-menu .header-menu_icon, .header-menu, .footer-list .footer-i, .footer-list .footer-i_plus, .fonctionnement .fonctionnement-button .fonctionnement-step, .fonctionnement .fonctionnement-button, .presentation, .header-index .header-localisation, .header-index {
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.flexcenter, .menu .btn-menu_container, .menu .menu-card .menu-card_icon, .menu .menu-card .menu-card_check, .header-menu .header-menu_logo, .header-menu .header-menu_icon, .header-menu, .footer-list .footer-i, .footer-list .footer-i_plus, .fonctionnement .fonctionnement-button .fonctionnement-step, .fonctionnement .fonctionnement-button, .presentation, .header-index .header-localisation, .header-index, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,11 +57,11 @@ body {
   width: 218px;
   height: 50px;
   background: linear-gradient(to top, #9356DC, #FF79DA);
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
+  transition: opacity 1s, filter 1s;
 }
 .btn:hover {
-  background: linear-gradient(to top, #a67bdb, #ffa5e5);
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+  opacity: 0.8;
+  filter: drop-shadow(7px 7px 5px black);
 }
 
 /****** CARD ***********/
@@ -89,10 +93,6 @@ body {
   margin: 12px 20px 0px 0px;
 }
 
-* {
-  font-family: "Roboto", sans-serif;
-}
-
 /****** HEART ANIMATION ***********/
 .animation-card_icon, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon, .restaurants .restaurants-cards .restaurant-card_icon {
   overflow: hidden;
@@ -122,7 +122,7 @@ body {
 
 /****** Appear ANIMATION  ***********/
 .appear, .menu .menu-cards {
-  animation: appearFromTop 1s;
+  animation: appearFromTop 2s;
   animation-fill-mode: both;
 }
 @keyframes appearFromTop {
@@ -134,13 +134,57 @@ body {
   }
 }
 .appear:nth-child(1), .menu .menu-cards:nth-child(1) {
-  animation-delay: 1s;
+  animation-delay: 3s;
 }
 .appear:nth-child(2), .menu .menu-cards:nth-child(2) {
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 .appear:nth-child(3), .menu .menu-cards:nth-child(3) {
-  animation-delay: 3s;
+  animation-delay: 5s;
+}
+
+/****** Loader ANIMATION  ***********/
+.loader {
+  position: fixed;
+  background: #9356DC;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  z-index: 2;
+  animation: disappear 200ms 3s linear;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+}
+.loader .dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FF79DA;
+  margin: 0 15px;
+  animation: loader infinite 0.5s alternate;
+}
+.loader .dot:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.loader .dot:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.loader .dot:nth-child(3) {
+  animation-delay: 0.9s;
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes loader {
+  100% {
+    transform: translateY(-30px);
+  }
 }
 
 /******************** PAGE INDEX *********************/
@@ -181,6 +225,7 @@ body {
 /****** Fonctionnement ***********/
 .fonctionnement {
   margin-left: 5%;
+  padding: 5% 0 5% 0;
 }
 .fonctionnement .fonctionnement-button {
   justify-content: space-evenly;
@@ -214,7 +259,7 @@ body {
 /****** Restaurants cartes ***********/
 .restaurants {
   background-color: #F3F3F3;
-  padding: 5px 30px 20px 30px;
+  padding: 10% 5% 20% 5%;
   box-sizing: border-box;
 }
 .restaurants .restaurants-cards .restaurant-card img {
@@ -285,7 +330,7 @@ body {
   flex-direction: row;
 }
 .header-menu .header-menu_icon {
-  width: 13%;
+  width: 5%;
   font-size: 19px;
   color: #353535;
 }
@@ -400,10 +445,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  /****** Header Mediaquery***********/
-  .header-index .header-logo {
-    height: 96px;
-  }
   /****** Presentation Mediaquery***********/
   .presentation {
     padding: 0% 10% 2% 10%;
@@ -419,7 +460,7 @@ body {
   }
   .fonctionnement .fonctionnement-title {
     display: flex;
-    margin-left: 2%;
+    margin-left: 17%;
   }
   .fonctionnement .fonctionnement-container {
     display: flex;
@@ -428,11 +469,16 @@ body {
   }
   .fonctionnement .fonctionnement-container .fonctionnement-button {
     height: 72px;
-    width: 24%;
+    width: 20%;
   }
   /****** Restaurants cartes Mediaquery ***********/
   .restaurants {
     flex-direction: column;
+    padding: 1% 0 2% 0;
+  }
+  .restaurants .restaurants-title {
+    padding-left: 17%;
+    height: 0px;
   }
   .restaurants .restaurants-cards {
     display: flex;
@@ -467,6 +513,7 @@ body {
   .footer-list ul li {
     margin-right: 20px;
   }
+  /****** Header RESTAURANT Mediaquery***********/
   /****** Presentation RESTAURANT Mediaquery ***********/
   .presentation-menu .presentation-menu_image img {
     height: 900px;
@@ -485,6 +532,9 @@ body {
   .menu .menu-cards {
     width: 70%;
     margin-left: 15%;
+  }
+  .menu .btn-menu_container {
+    padding-top: 3%;
   }
 }
 
