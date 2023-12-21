@@ -134,13 +134,13 @@ body {
   }
 }
 .appear:nth-child(1), .menu .menu-cards:nth-child(1) {
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 .appear:nth-child(2), .menu .menu-cards:nth-child(2) {
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 .appear:nth-child(3), .menu .menu-cards:nth-child(3) {
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 
 /****** Loader ANIMATION  ***********/
@@ -229,11 +229,11 @@ body {
 }
 .fonctionnement .fonctionnement-button {
   justify-content: space-evenly;
-  height: 50px;
+  height: 72.38px;
   background-color: #F3F3F3;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
   border-radius: 20px;
-  margin: 0% 1% 5% 1%;
+  margin: 0% 2% 5% 0%;
   width: 95%;
 }
 .fonctionnement .fonctionnement-button i {

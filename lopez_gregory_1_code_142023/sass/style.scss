@@ -153,7 +153,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
     @for $i from 1 to 4 {
         &:nth-child(#{$i}) {
-            animation-delay: 2s + $i;
+            animation-delay: 1s * $i;
         }
     }
     animation: appearFromTop 2s;
@@ -252,11 +252,11 @@ $gradient: linear-gradient(to top, $primary, $secondary);
     .fonctionnement-button {
         @extend .flexcenter;
         justify-content: space-evenly;
-        height: 50px;
+        height: 72.38px;
         background-color: $background;
         filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.1));
         border-radius: 20px;
-        margin: 0% 1% 5% 1%;
+        margin: 0% 2% 5% 0%;
         width: 95%;
 
         i {
