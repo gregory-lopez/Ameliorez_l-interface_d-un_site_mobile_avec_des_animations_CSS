@@ -153,7 +153,6 @@ body {
   z-index: 2;
   animation: disappear 200ms 3s linear;
   animation-fill-mode: forwards;
-  transform-origin: bottom;
 }
 .loader .dot {
   width: 50px;
@@ -472,7 +471,7 @@ body {
   }
   .fonctionnement .fonctionnement-container .fonctionnement-button {
     height: 72px;
-    width: 20%;
+    width: 23%;
   }
   /****** Restaurants cartes Mediaquery ***********/
   .restaurants {
@@ -538,6 +537,12 @@ body {
   }
   .menu .btn-menu_container {
     padding-top: 3%;
+  }
+}
+@media (min-width: 1150px) {
+  .fonctionnement .fonctionnement-container .fonctionnement-button {
+    height: 72px;
+    width: 20%;
   }
 }
 

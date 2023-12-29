@@ -171,7 +171,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
  z-index: 2;
  animation: disappear 200ms 3s linear;
  animation-fill-mode: forwards;
- transform-origin: bottom;
 
  .dot {
      @for $i from 1 to 4 {
@@ -502,10 +501,10 @@ $gradient: linear-gradient(to top, $primary, $secondary);
             
             p {
                 @include overflow;
-            font-size: 15px;
-            font-weight: 300;
+                font-size: 15px;
+                font-weight: 300;
             
-        }
+            }
         }
 
         .menu-card_title {
@@ -577,7 +576,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
             .fonctionnement-button {
             height: 72px;
-            width: 20%;
+            width: 23%;
             }
         }
     }
@@ -670,6 +669,29 @@ $gradient: linear-gradient(to top, $primary, $secondary);
         }
     }
 }
+
+
+@media (min-width: 1150px) {
+    .fonctionnement {
+
+    
+         
+    
+            .fonctionnement-container {
+
+    
+                .fonctionnement-button {
+                height: 72px;
+                width: 20%;
+                }
+            }
+        }
+}
+
+
+
+
+
 
 
 
