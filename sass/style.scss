@@ -458,7 +458,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
 /****** Menu RESTAURANT***********/
 .menu {
-
     background-color: $background;
     margin-top: -65px;
     padding: 5px 15px 20px 15px;
@@ -485,7 +484,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
         @extend .card; 
         height: 68px;
         overflow: hidden;
-
     
         &:hover .menu-card_check{
             margin-right: 0;
@@ -503,7 +501,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
                 @include overflow;
                 font-size: 15px;
                 font-weight: 300;
-            
             }
         }
 
@@ -545,9 +542,7 @@ $gradient: linear-gradient(to top, $primary, $secondary);
         .btn-menu_container {
             padding-top: 10%;
             @extend .flexcenter;
-        }
-
-    
+        } 
 }
 
 @media (min-width: 1024px) {
@@ -600,12 +595,10 @@ $gradient: linear-gradient(to top, $primary, $secondary);
             width: 90%;
             }
     
-    
             a {
             margin-left: 3%;
             margin-top: 2.5%;
             width: 33%;
-    
             }
         }
     }
@@ -672,10 +665,6 @@ $gradient: linear-gradient(to top, $primary, $secondary);
 
 @media (min-width: 1150px) {
     .fonctionnement {
-
-    
-         
-    
             .fonctionnement-container {
 
     
