@@ -98,7 +98,7 @@ body {
   overflow: hidden;
 }
 .animation-card_icon:hover .fa-solid, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon:hover .fa-solid, .restaurants .restaurants-cards .restaurant-card_icon:hover .fa-solid {
-  bottom: 0px;
+  top: 0px;
   visibility: visible;
 }
 .animation-card_icon:hover .fa-regular, .presentation-menu .presentation-menu-title .restaurant-menu-card_icon:hover .fa-regular, .restaurants .restaurants-cards .restaurant-card_icon:hover .fa-regular {
@@ -114,7 +114,7 @@ body {
   background-image: linear-gradient(to top, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
-  bottom: 17px;
+  top: 10px;
   transition: 0.3s;
   position: relative;
   visibility: hidden;
@@ -200,8 +200,14 @@ body {
   width: 100%;
   height: 50px;
 }
-.header-index .header-localisation p {
-  margin: 5%;
+.header-index .header-localisation input {
+  border-style: none;
+  background-color: #EAEAEA;
+}
+.header-index .header-localisation input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: #353535;
 }
 .header-index .header-localisation i {
   color: #353535;
